@@ -15,3 +15,6 @@ Currently, two official plugins are available:
 - Criar a pasta routes.
 ## As rotas ou páginas
 - Criando as rotas/páginas [Home, EditarProdutos, Produtos e Erro404].
+## Importar os objetos das rotas no main.jsx e dos componentes de rotas.
+- import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+- import Home..., import Produtos..., import EditarProdutos..., import Erro404...
