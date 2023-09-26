@@ -1,0 +1,45 @@
+
+
+.tblEstilo{
+    border: 2px solid #ccc;
+    border-collapse: collapse;
+    margin: 0 auto;
+
+    & thead{
+        background-color: #ffe4c4;
+
+        & th{
+            border: 2px solid #ccc;
+            text-align: center;
+        }
+    }
+
+    & tbody{
+        & tr{
+            &:hover{
+                background-color: #e2e2e2;
+            }
+
+            & td{
+                border: 2px solid #ccc;
+
+                &:first-child{
+                    text-align: center;
+                }
+                &:last-child{
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    & tfoot{
+        & tr{
+            & td{
+                border: 2px solid #ccc;
+                text-align: center;
+            }
+        }
+    }
+
+}
