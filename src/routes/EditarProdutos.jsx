@@ -33,15 +33,15 @@ export default function EditarProdutos() {
             <legend>Produto Selecionado</legend>
             <div>
               <label htmlFor="idNome">Nome</label>
-              <input type="text" name="nome" id="idNome" placeholder="Digite o nome do produto" value={produto.nome}/>
+              <input type="text" name="nome" id="idNome" placeholder="Digite o nome do produto" value={produto.nome}  onChange={(e)=> setProduto(e.target.value)}/>
             </div>
             <div>
               <label htmlFor="idDesc">Descrição</label>
-              <input type="text" name="desc" id="idDesc" placeholder="Digite a descrição do produto" value={produto.desc}/>
+              <input type="text" name="desc" id="idDesc" placeholder="Digite a descrição do produto" value={produto.desc} onChange={(e)=> setProduto(e.target.value)}/>
             </div>
             <div>
               <label htmlFor="idPreco">Valor</label>
-              <input type="number" name="preco" id="idPreco" placeholder="Digite o valor do produto" value={produto.preco}/>
+              <input type="number" name="preco" id="idPreco" placeholder="Digite o valor do produto" value={produto.preco} onChange={(e)=> setProduto(e.target.value)}/>
             </div>
             <div>
               <button>EDITAR</button>
