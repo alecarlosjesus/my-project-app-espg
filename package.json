@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "churros":"json-server --watch db.json  --port 5000"
+    "churros": "json-server --watch db.json  --port 5000"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -25,6 +25,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "json-server": "^0.17.4",
+    "sass": "^1.69.1",
     "vite": "^4.4.5"
   }
 }
