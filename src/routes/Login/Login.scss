@@ -1,0 +1,24 @@
+
+.login-sucesso{
+    display: block;
+    background-color: #63d463;
+    color: #214821;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2px;
+    border: 2px solid #214821;
+}
+
+.login-erro{
+    display: block;
+    background-color: #d96666;
+    color: #b82121;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2px;
+    border: 2px solid #b82121;
+}
+
+.login{
+    display: none;
+}

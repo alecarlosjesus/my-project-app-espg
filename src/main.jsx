@@ -9,7 +9,7 @@ import Produtos from './routes/Produtos.jsx';
 import EditarProdutos from './routes/EditarProdutos.jsx';
 import Erro404 from './routes/Erro404.jsx';
 import ExcluirProdutos from './routes/ExcluirProdutos.jsx';
-import Login from './routes/Login.jsx';
+import Login from './routes/Login/Login.jsx';
 
 const router = createBrowserRouter([ 
   {path: "/", element: <App/> , errorElement: <Erro404/>, 
