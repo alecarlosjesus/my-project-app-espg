@@ -5,7 +5,7 @@ export default function Login() {
 
     const [msgstatus, setMsgstatus] = useState("");
     const [classStatus, setClassStatus] = useState("");
-
+    
 
   //Vai receber os dados do FORMULÁRIO!!!
   //É um OBJETO!!!
@@ -58,6 +58,11 @@ export default function Login() {
           }
         }
         if (user) {
+
+          //SessionStorage
+          sessionStorage.setItem("userLogged", JSON.stringify(user));
+        
+
           //Redirecionando o usuário para HOME!
           setMsgstatus("Login realizado com SUCESSO!!");
           setTimeout(()=>{
