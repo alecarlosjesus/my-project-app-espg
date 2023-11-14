@@ -41,6 +41,8 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    //Esta variável vai se transformar em um objeto que será retornado junto com o
+    // token do usuário, para que dos dados pertinentes sejam apresentados na tela.
     let user;
 
     try {
@@ -60,6 +62,16 @@ export default function Login() {
         if (user) {
           //Redirecionando o usuário para HOME!
           setMsgstatus("Login realizado com SUCESSO!!");
+          
+          //Gerar o token do usuário na sessionStorage.
+          //Vamos utilizar Math.Randon com uma string alfanúmerica.
+          const token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
+
+          //Armazenar o token na sessionStorage
+          //Para isso vamos utilizar o método setItem(chave, valor).
+          //Precisamos lembrar que tudo o que adicionamos na sessionStorage e ou localStorage deve ser do tipo String. Neste caso o token é uma String então não existe a necessidade de realizar uma conversão por exemplo utilizando a função JSON.stringify(objeto).
+          sessionStorage.setItem("token-user", token);
+
           setTimeout(()=>{
               window.location = "/";
             },5000);
