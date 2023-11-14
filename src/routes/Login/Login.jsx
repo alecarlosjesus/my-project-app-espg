@@ -49,7 +49,7 @@ export default function Login() {
       const response = await fetch("http://localhost:5000/usuarios");
       if (response.ok) {
         const users = await response.json();
-        console.log(users);
+        // console.log(users);
         for (let x = 0; x < users.length; x++) {
           const u = users[x];
 
@@ -60,10 +60,6 @@ export default function Login() {
           }
         }
         if (user) {
-
-          //SessionStorage
-          sessionStorage.setItem("userLogged", JSON.stringify(user));
-        
 
           //Redirecionando o usuário para HOME!
           setMsgstatus("Login realizado com SUCESSO!!");
@@ -76,6 +72,9 @@ export default function Login() {
           //Para isso vamos utilizar o método setItem(chave, valor).
           //Precisamos lembrar que tudo o que adicionamos na sessionStorage e ou localStorage deve ser do tipo String. Neste caso o token é uma String então não existe a necessidade de realizar uma conversão por exemplo utilizando a função JSON.stringify(objeto).
           sessionStorage.setItem("token-user", token);
+
+          //Adicionando o objeto do usuário na sessionStorage.
+          sessionStorage.setItem("user-obj", JSON.stringify(user));
 
           setTimeout(()=>{
               window.location = "/";

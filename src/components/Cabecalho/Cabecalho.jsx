@@ -7,25 +7,26 @@ import { useEffect } from "react";
 export default function Cabecalho() {
 
     const rotaAtual = useLocation();
-    const [userLogado] = useState(JSON.parse(sessionStorage.getItem("userLogged")));
 
+    const userLogado = JSON.parse(sessionStorage.getItem("user-obj"));
+    const [usuario] = useState(userLogado);
 
-    const handleLogout = () => {
-        sessionStorage.removeItem("userLogged");
-        window.location.reload();
+    const handleLogout = ()=>{
+      sessionStorage.removeItem("user-obj");
+      sessionStorage.removeItem("token-user");
+      window.location = "/";
     }
 
-
+    
 if(sessionStorage.getItem("token-user")){
   return (
     <>
         <header className={styles.cabecalho}>
 
-            <div style={userLogado == null ? {display:"none"}:{display:"block"}}>
-              <p className="usuario">{userLogado != null ? `Nome: ${userLogado.name}`: ""}</p>
-              <p className="usuario">{userLogado != null ? `Email: ${userLogado.email}`: ""}</p>
-              <button onClick={handleLogout}>Logout</button>
-            </div>
+          <div className="usuario">
+            <p>Olá {usuario.name}</p>
+            <p>{usuario.email}</p>
+          </div>
 
           <img src="/img/produtos.png" alt="Mãos segurando caixas." /> 
 
@@ -35,7 +36,7 @@ if(sessionStorage.getItem("token-user")){
           <nav>
             <ul>
               <li><Link to="/" className={rotaAtual.pathname == "/" ? "active" : "" }>HOME</Link></li>
-              <li><Link to="/login" className={rotaAtual.pathname == "/login" ? "active" : "" }>LOGIN</Link></li>
+              <li><Link to="/login" className={rotaAtual.pathname == "/login" ? "active" : "" } onClick={handleLogout}>LOGOUT</Link></li>
               <li><Link to="/produtos" className={rotaAtual.pathname == "/produtos" ? "active" : "" }>PRODUTOS</Link> </li>
             </ul>
           </nav>
